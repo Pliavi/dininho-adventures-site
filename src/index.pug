@@ -1,0 +1,25 @@
+include ./_partials/head.pug
+
+header.game#game-screen
+  img.game__logo(src="./images/logo.png" alt="Dininho Adventures Logo")
+  .game__light
+  .game__ground(style="background-image: url('./images/game_floor.png'); width: 100%; height: 164px")
+section
+  h1 Ajude Dininho, nesta que pode...
+    p.
+      ...ser a aventura mais heroica de sua vida! Só mesmo alguém muito
+      maligno poderia ter a frieza de roubar os ovos de uma mamãe dinossauro
+      indefesa e Dininho não pode deixar isso assim. Explore este mundo
+      colorido e perigoso, resgatando todos os bebês indefesos. Mas cuidado,
+      "Ele" estará te esperando ao final de cada estrada. Eu confio em você!
+      Vá e seja o herói da Dinolândia.
+
+hr.egg-separator
+
+section.screenshots
+  .screenshots-slider
+    video(src="#")
+  button.button Jogar
+
+
+script(src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js")
