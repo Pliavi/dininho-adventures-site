@@ -1,0 +1,9 @@
+{
+  "modules": false,
+  "plugins": {
+    "css-mqpacker":  true,  
+    "autoprefixer": {
+      "grid": true
+    }
+  }
+}

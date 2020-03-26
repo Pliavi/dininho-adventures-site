@@ -1,17 +1,15 @@
 {
   "scripts": {
-    "dev": "export NODE_ENV=dev && gulp watch",
-    "build": "export NODE_ENV=prod && gulp watch"
+    "dev": "parcel src/index.pug",
+    "devopen": "parcel src/index.pug --open 'google chrome'",
+    "build": "parcel build src/index.pug"
   },
-  "browserslist": [
-    "last 4 version"
-  ],
   "devDependencies": {
-    "autoprefixer": "^9.7.4",
-    "cssnano": "^4.1.10",
-    "gulp": "^4.0.2",
-    "gulp-postcss": "^8.0.0",
-    "gulp-pug": "^4.0.1",
-    "gulp-stylus": "^2.7.0"
+    "pug": "^2.0.4",
+    "stylus": "^0.54.7"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.7.5",
+    "css-mqpacker": "^7.0.0"
   }
 }
