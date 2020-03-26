@@ -1,7 +1,6 @@
 include ./_partials/head.pug
 
 header.game#game-screen
-  //- img.game-logo(src="./images/logo.png" alt="Dininho Adventures Logo")
   .game-logo.is-light
   .game-ground(style="background-image: url('./images/game_floor.png'); width: 100%; height: 164px")
 
@@ -37,11 +36,11 @@ header.game#game-screen
   section.section.features
     h1.title.is-main jogo tem
 
-    ul
+    ul.feature-list
       li Controle de Dininho nessa clássica aventura em plataformas, superando os obstáculos para entregar os ovos ao ninho.
       li Campanha principal com 4 mundos distintos com suas próprias características e desafios.
       li Mundo especial desbloqueável para os melhores exploradores.
-      li Temporizador dentro do jogo (Speedrunners <3).
+      li Temporizador dentro do jogo (Speedrunners #{"<3"}).
       li Ranking de melhores tempos em cada fase entre seus amigos da Steam!
 
   .separator
@@ -84,5 +83,8 @@ script(src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/glide.js")
 script.
   new Glide('.glide', {
     type: "carousel",
+    autoplay: 3000,
+    hoverpause: true,
+    focusAt: "center",
     gap: 10,
   }).mount()
