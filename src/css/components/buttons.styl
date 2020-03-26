@@ -5,13 +5,15 @@
   margin auto;
   width 200px;
   height 50px;
-  background-image url('./images/button.svg');
+  filter drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.4));
+  background-image url('../images/button.svg');
   background-origin center center;
   background-size 100% 100%;
   color white;
   font-size 20px;
-  transition .1s all
-  filter drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.4));
+  cursor pointer;
+  transition 0.1s all;
+
   &:hover
-    transform scale(0.95);
     filter drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.4));
+    transform scale(0.95);
