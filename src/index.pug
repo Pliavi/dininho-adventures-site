@@ -1,11 +1,13 @@
 include ./_partials/head.pug
 
 header.game#game-screen
-  img.game__logo(src="./images/logo.png" alt="Dininho Adventures Logo")
-  .game__light
-  .game__ground(style="background-image: url('./images/game_floor.png'); width: 100%; height: 164px")
-section
-  h1 Ajude Dininho, nesta que pode...
+  //- img.game-logo(src="./images/logo.png" alt="Dininho Adventures Logo")
+  .game-logo.is-light
+  .game-ground(style="background-image: url('./images/game_floor.png'); width: 100%; height: 164px")
+
+.page-wrapper
+  section.section.introduction
+    h1.title.is-main Ajude Dininho, nesta que pode...
     p.
       ...ser a aventura mais heroica de sua vida! Só mesmo alguém muito
       maligno poderia ter a frieza de roubar os ovos de uma mamãe dinossauro
@@ -14,12 +16,73 @@ section
       "Ele" estará te esperando ao final de cada estrada. Eu confio em você!
       Vá e seja o herói da Dinolândia.
 
-hr.egg-separator
+  .separator
+    img(src="./images/egg.png")
 
-section.screenshots
-  .screenshots-slider
-    video(src="#")
-  button.button Jogar
+  section.section.screenshots
+    - var n = 1;
+    .screenshots-slider.glide
+      .glide__track(data-glide-el="track")
+        .glide__slides
+          video.glide__slide(controls = "true")
+            source(src="./images/screenshots/video.mp4")
+          while n < 15
+            img.glide__slide(src="./images/screenshots/" + String(n++).padStart(2,0) + ".png")
 
+    a.button.is-wood Jogar
 
-script(src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js")
+  .separator
+    img(src="./images/egg.png")
+
+  section.section.features
+    h1.title.is-main jogo tem
+
+    ul
+      li Controle de Dininho nessa clássica aventura em plataformas, superando os obstáculos para entregar os ovos ao ninho.
+      li Campanha principal com 4 mundos distintos com suas próprias características e desafios.
+      li Mundo especial desbloqueável para os melhores exploradores.
+      li Temporizador dentro do jogo (Speedrunners <3).
+      li Ranking de melhores tempos em cada fase entre seus amigos da Steam!
+
+  .separator
+    img(src="./images/egg.png")
+
+  section.section.requirements
+    h1.title.is-main Requisitos
+
+    dl.requirement-list
+      div
+        dt SO: 
+        dd Windows 7, 8/8.1, 10
+      div
+        dt Processador:
+        dd 2.0 Ghz
+      div
+        dt Memória:
+        dd 2.5 GB de RAM
+      div
+        dt Placa de vídeo:
+        dd 128mb Video Memory
+      div
+        dt DirectX:
+        dd Versão 9.0
+      div
+        dt Armazenamento:
+        dd 400 MB de espaço disponível
+
+  .separator
+    img(src="./images/nest.png")
+
+  .copyright Dininho Adventures Copyright @ 2020 - 2020
+
+  .social
+    img.social-icon(src="./images/discord.svg")
+    img.social-icon(src="./images/twitter.svg")
+    img.social-icon(src="./images/twitch.svg")
+
+script(src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/glide.js")
+script.
+  new Glide('.glide', {
+    type: "carousel",
+    gap: 10,
+  }).mount()
