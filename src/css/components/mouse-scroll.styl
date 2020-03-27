@@ -1,0 +1,118 @@
+.scroll-call
+  margin auto;
+  width 19px;
+  height: 12vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  span
+    display block;
+    margin 0 0 3px 6px;
+    width 5px;
+    height 5px;
+    border-right 2px solid white;
+    border-bottom 2px solid white;
+    transform rotate(45deg);
+    -ms-transform rotate(45deg); /* IE 9 */
+    -webkit-transform rotate(45deg); /* Chrome, Safari, Opera */
+
+  .unu
+    margin-top 6px;
+
+  .unu, .doi
+    -webkit-animation mouse-scroll 1s infinite;
+    -moz-animation mouse-scroll 1s infinite;
+
+  .unu
+    -webkit-animation-delay 0.1s;
+    -moz-animation-delay 0.1s;
+    -webkit-animation-direction alternate;
+
+  .doi
+    -webkit-animation-delay 0.2s;
+    -moz-animation-delay 0.2s;
+    -webkit-animation-direction alternate;
+
+  .mouse
+    top 170px;
+    width 14px;
+    height 21px;
+    border 2px solid white;
+    border-radius 10px;
+    transform none;
+
+  .wheel
+    position relative;
+    display block;
+    margin 5px auto;
+    width 2px;
+    height 5px;
+    background white;
+
+  .wheel
+    -webkit-animation mouse-wheel 1.2s ease infinite;
+    -moz-animation mouse-wheel 1.2s ease infinite;
+
+  @keyframes mouse-wheel
+    0%
+      opacity 1;
+      transform translateY(0);
+      -webkit-transform translateY(0);
+      -ms-transform translateY(0);
+
+    100%
+      opacity 0;
+      transform translateY(6px);
+      -webkit-transform translateY(6px);
+      -ms-transform translateY(6px);
+
+  @keyframes mouse-wheel
+    0%
+      top 1px;
+
+    50%
+      top 2px;
+
+    100%
+      top 3px;
+
+  @keyframes mouse-scroll
+    0%
+      opacity 0;
+
+    50%
+      opacity 0.5;
+
+    100%
+      opacity 1;
+
+  @keyframes mouse-scroll
+    0%
+      opacity 0;
+
+    50%
+      opacity 0.5;
+
+    100%
+      opacity 1;
+
+  @keyframes mouse-scroll
+    0%
+      opacity 0;
+
+    50%
+      opacity 0.5;
+
+    100%
+      opacity 1;
+
+  @keyframes mouse-scroll
+    0%
+      opacity 0;
+
+    50%
+      opacity 0.5;
+
+    100%
+      opacity 1;

@@ -1,12 +1,23 @@
 include ./_partials/head.pug
 
-header.game#game-screen
-  .game-logo.is-light
-  .game-ground(style="background-image: url('./images/game_floor.png'); width: 100%; height: 164px")
+header.paralax
+  .back-mountains
+  .front-mountains
+  .ground
+  img.logo(src="./images/logo.png")
+  img.dininho(src="./images/dininho_jump.png")
 
 .page-wrapper
+
   section.section.introduction
-    h1.title.is-main Ajude Dininho, nesta que pode...
+    h1.title.is-main#main-title Ajude Dininho, nesta que pode...
+    .scroll-call
+      .mouse
+        .wheel
+      div
+        span.uno
+        span.doi
+
     p.
       ...ser a aventura mais heroica de sua vida! Só mesmo alguém muito
       maligno poderia ter a frieza de roubar os ovos de uma mamãe dinossauro
@@ -16,22 +27,23 @@ header.game#game-screen
       Vá e seja o herói da Dinolândia.
 
   .separator
-    img(src="./images/egg.png")
+    img(src="./images/icons/egg.png")
 
-  section.section.screenshots
-    - var n = 1;
-    .screenshots-slider.glide
-      .glide__track(data-glide-el="track")
-        .glide__slides
-          video.glide__slide(controls = "true")
-            source(src="./images/screenshots/video.mp4")
-          while n < 15
-            img.glide__slide(src="./images/screenshots/" + String(n++).padStart(2,0) + ".png")
+section.section.screenshots
+  - var n = 1;
+  .screenshots-slider.glide
+    .glide__track(data-glide-el="track")
+      .glide__slides
+        video.glide__slide(controls = "true")
+          source(src="./images/screenshots/video.mp4")
+        while n < 15
+          img.glide__slide(src="./images/screenshots/" + String(n++).padStart(2,0) + ".png")
 
-    a.button.is-wood Jogar
+  a.button.is-wood Jogar
 
+.page-wrapper
   .separator
-    img(src="./images/egg.png")
+    img(src="./images/icons/egg.png")
 
   section.section.features
     h1.title.is-main jogo tem
@@ -44,7 +56,7 @@ header.game#game-screen
       li Ranking de melhores tempos em cada fase entre seus amigos da Steam!
 
   .separator
-    img(src="./images/egg.png")
+    img(src="./images/icons/egg.png")
 
   section.section.requirements
     h1.title.is-main Requisitos
@@ -70,14 +82,14 @@ header.game#game-screen
         dd 400 MB de espaço disponível
 
   .separator
-    img(src="./images/nest.png")
+    img(src="./images/icons/nest.png")
 
   .copyright Dininho Adventures Copyright @ 2020 - 2020
 
   .social
-    img.social-icon(src="./images/discord.svg")
-    img.social-icon(src="./images/twitter.svg")
-    img.social-icon(src="./images/twitch.svg")
+    img.social-icon(src="./images/icons/discord.svg")
+    img.social-icon(src="./images/icons/twitter.svg")
+    img.social-icon(src="./images/icons/twitch.svg")
 
 script(src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/glide.js")
 script.
@@ -87,4 +99,6 @@ script.
     hoverpause: true,
     focusAt: "center",
     gap: 10,
+    perView: 2
   }).mount()
+  
