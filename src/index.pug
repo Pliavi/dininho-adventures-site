@@ -31,15 +31,18 @@ header.paralax
 
 section.section.screenshots
   - var n = 1;
-  .screenshots-slider.glide
-    .glide__track(data-glide-el="track")
-      .glide__slides
-        video.glide__slide(controls = "true")
-          source(src="./images/screenshots/video.mp4")
-        while n < 15
-          img.glide__slide(src="./images/screenshots/" + String(n++).padStart(2,0) + ".png")
+  .screenshots-slider.hide-mobile
+    .slide.video-player(style="line-height: 0")
+      video(poster="./images/screenshots/06.png")
+        source(src="./images/screenshots/video.mp4")
+    while n < 15
+      img.slide(src="./images/screenshots/" + String(n++).padStart(2,0) + ".png")
 
-  a.button.is-wood Jogar
+  .slide.video-player.hide-desktop
+    video(style="width: 100%" poster="./images/screenshots/06.png")
+      source(src="./images/screenshots/video.mp4")
+
+  a.button.is-wood(target="_blank" rel="noopener noreferrer" href="https://store.steampowered.com/app/1230760/Dininho_Adventures/") Jogar 
 
 .page-wrapper
   .separator
@@ -91,14 +94,15 @@ section.section.screenshots
     img.social-icon(src="./images/icons/twitter.svg")
     img.social-icon(src="./images/icons/twitch.svg")
 
-script(src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/glide.js")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js")
 script.
-  new Glide('.glide', {
-    type: "carousel",
-    autoplay: 3000,
-    hoverpause: true,
-    focusAt: "center",
-    gap: 10,
-    perView: 2
-  }).mount()
+  var slider = tns({
+    container: '.screenshots-slider',
+    items: 2,
+    controls: false,
+    nav: false,
+    arrowKeys:true,
+    mouseDrag: true,
+    center: true
+  });
   
