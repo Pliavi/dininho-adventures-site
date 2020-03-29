@@ -1,0 +1,101 @@
+.preload-key
+  background-image url('../images/icons/key01.png'), url('../images/icons/key02.png'), url('../images/icons/key03.png'), url('../images/icons/key04.png'), url('../images/icons/key05.png'), url('../images/icons/key06.png');
+
+.easter-egg
+  position fixed;
+  top 0;
+  left 0;
+  z-index 9;
+  display none;
+  flex-direction column;
+  justify-content center;
+  align-items center;
+  width 100vw;
+  height 100vh;
+  background #0009;
+  color #fff;
+  text-align center;
+  font-size 2rem;
+  line-height 150%;
+  animation 1s show-easter-egg linear, 1s hide-easter-egg linear;
+  animation-play-state paused;
+  animation-delay 0s, 3s;
+  backdrop-filter blur(10px);
+  animation-fill-mode none, forwards;
+
+  > div
+    position absolute;
+    top 20px;
+    left 0;
+    display block;
+    width 100%;
+    text-align center;
+
+  &.--playing
+    display flex;
+    animation-play-state running;
+
+.key-mover
+  position fixed;
+  top calc(50vh - 80px);
+  right calc(50vw - 40px);
+  z-index 10;
+  display none;
+  animation 1s show-easter-egg linear, 1s move-key linear;
+  animation-play-state paused;
+  animation-delay 0s, 3s;
+  animation-fill-mode none, forwards;
+
+  &.--playing
+    display block;
+    animation-play-state running;
+
+  .key
+    position relative;
+    width 80px;
+    height 160px;
+    filter drop-shadow(0 0 3px #0005);
+    animation 1s key-animation linear;
+    animation-iteration-count infinite;
+
+@keyframes show-easter-egg
+  from
+    opacity 0;
+
+  to
+    opacity 1;
+
+@keyframes hide-easter-egg
+  from
+    opacity 1;
+
+  to
+    opacity 0;
+
+@keyframes key-animation
+  0%
+    background-image url('../images/icons/key01.png');
+
+  20%
+    background-image url('../images/icons/key02.png');
+
+  40%
+    background-image url('../images/icons/key03.png');
+
+  60%
+    background-image url('../images/icons/key04.png');
+
+  80%
+    background-image url('../images/icons/key05.png');
+
+  100%
+    background-image url('../images/icons/key06.png');
+
+@keyframes move-key
+  from
+    top calc(50vh - 80px);
+    right calc(50vw - 40px);
+
+  to
+    top 0;
+    right 30px;
