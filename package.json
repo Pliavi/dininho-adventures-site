@@ -2,9 +2,10 @@
   "scripts": {
     "dev": "parcel src/index.pug",
     "devopen": "parcel src/index.pug --open 'google chrome'",
-    "build": "parcel build src/index.pug"
+    "build": "parcel build src/index.pug --out-dir docs"
   },
   "devDependencies": {
+    "cssnano": "^4.1.10",
     "pug": "^2.0.4",
     "stylus": "^0.54.7"
   },
