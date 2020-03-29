@@ -1,36 +1,14 @@
 .paralax
   position relative;
   margin-bottom 42px;
-  height calc(74vh - 42px);
+  height calc(85vh - 82px);
   background-color #34dcd2;
-  background-image url('../images/paralax/sky.png');
+  background-image url('../images/paralax/front_mountains.png'), url('../images/paralax/back_mountains.png'), url('../images/paralax/sky.png');
   background-position center top;
-  background-size cover;
+  background-position left calc(-3 * var(--paralax-move-x)) bottom calc(2 * var(--paralax-move-y)), left calc(3 * var(--paralax-move-x)) bottom calc(2 * var(--paralax-move-y)), center top;
+  background-size 100vmin, 100vmin, cover;
+  background-repeat repeat-x;
   image-rendering pixelated;
-
-  @media $landscape-mobile-size
-    height 100vh;
-
-  >.front-mountains
-    height 460px;
-    background-image url('../images/paralax/front_mountains.png');
-
-  >.back-mountains
-    height 390px;
-    background-image url('../images/paralax/back_mountains.png');
-
-  >.front-mountains, >.back-mountains
-    position absolute;
-    bottom 0;
-    display block;
-    width 100%;
-    background-position center bottom;
-    background-size contain;
-    background-repeat repeat-x;
-    image-rendering pixelated;
-
-    @media $mobile-size
-      display none;
 
   > .logo
     position relative;
@@ -48,9 +26,11 @@
     position relative;
     display block;
     margin auto;
-    margin-top 10vh;
+    margin-top calc(10vh + -1.2 * var(--paralax-move-y));
+    padding-right calc(2 * var(--paralax-move-x));
 
     @media $landscape-mobile-size
+      display: none;
       margin-top 12px;
 
   > .ground
