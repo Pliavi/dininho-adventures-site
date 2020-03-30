@@ -1,0 +1,16 @@
++fluidSection("is-screenshots", false)
+  .screenshots-slider.hide-mobile
+    .slide.video-player(style="line-height: 0")
+      video(poster="./images/screenshots/06.png")
+        source(src="./images/screenshots/video.mp4")
+
+    - var n = 1;
+    while n < 15
+      img.slide(src="./images/screenshots/" + String(n++).padStart(2,0) + ".png")
+
+  .slide.video-player.hide-desktop
+    video(style="width: 100%" poster="./images/screenshots/06.png")
+      source(src="./images/screenshots/video.mp4")
+
+  a.button.is-wood(target="_blank" rel="noopener noreferrer" href="https://store.steampowered.com/app/1230760/Dininho_Adventures/") 
+    | Jogar 

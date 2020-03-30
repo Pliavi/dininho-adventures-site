@@ -1,116 +1,18 @@
-include ./_partials/head.pug
+extends ./_templates/default.pug
+include ./_mixins/section.pug
+include ./_mixins/separator.pug
 
-header.paralax#paralax
-  .ground
-  img.logo(src="./images/logo.png")
-  img.dininho(src="./images/dininho_jump.png")
+block content
+  include ./_partials/header.pug
 
-.page-wrapper
+  include ./_partials/introduction.pug  
+  +separator
+  include ./_partials/screenshots.pug
+  +separator
+  include ./_partials/features.pug
+  +separator
+  include ./_partials/requirements.pug
+  +separator(true)
 
-  section.section.introduction
-    h1.title.is-main#main-title Ajude Dininho, nesta que pode...
-    .scroll-call
-      div
-        span.uno
-        span.doi
-
-    p.
-      ...ser a aventura mais heroica de sua vida! Só mesmo alguém muito
-      maligno poderia ter a frieza de roubar os ovos de uma mamãe dinossauro
-      indefesa e Dininho não pode deixar isso assim. Explore este mundo
-      colorido e perigoso, resgatando todos os bebês indefesos. Mas cuidado,
-      "Ele" estará te esperando ao final de cada estrada. Eu confio em você!
-      Vá e seja o herói da Dinolândia.
-
-  .separator
-    img(src="./images/icons/egg.png")
-
-section.section.screenshots
-  - var n = 1;
-  .screenshots-slider.hide-mobile
-    .slide.video-player(style="line-height: 0")
-      video(poster="./images/screenshots/06.png")
-        source(src="./images/screenshots/video.mp4")
-    while n < 15
-      img.slide(src="./images/screenshots/" + String(n++).padStart(2,0) + ".png")
-
-  .slide.video-player.hide-desktop
-    video(style="width: 100%" poster="./images/screenshots/06.png")
-      source(src="./images/screenshots/video.mp4")
-
-  a.button.is-wood(target="_blank" rel="noopener noreferrer" href="https://store.steampowered.com/app/1230760/Dininho_Adventures/") Jogar 
-
-.page-wrapper
-  .separator
-    img(src="./images/icons/egg.png")
-
-  section.section.features
-    h2.subtitle jogo tem
-
-    ul.feature-list
-      li Controle de Dininho nessa clássica aventura em plataformas, superando os obstáculos para entregar os ovos ao ninho.
-      li Campanha principal com 4 mundos distintos com suas próprias características e desafios.
-      li Mundo especial desbloqueável para os melhores exploradores.
-      li Temporizador dentro do jogo (Speedrunners #{"<3"}).
-      li Ranking de melhores tempos em cada fase entre seus amigos da Steam!
-
-  .separator
-    img(src="./images/icons/egg.png")
-
-  section.section.requirements
-    h2.subtitle Requisitos
-
-    dl.requirement-list
-      div
-        dt SO: 
-        dd Windows 7, 8/8.1, 10
-      div
-        dt Processador:
-        dd 2.0 Ghz
-      div
-        dt Memória:
-        dd 2.5 GB de RAM
-      div
-        dt Placa de vídeo:
-        dd 128mb Video Memory
-      div
-        dt DirectX:
-        dd Versão 9.0
-      div
-        dt Armazenamento:
-        dd 400 MB de espaço disponível
-
-  .separator
-    img(src="./images/icons/nest.png")
-
-  .copyright Dininho Adventures Copyright @ 2020 - 2020
-
-  .social
-    a(href="#discord" target="_blank" rel="noopener noreferrer")
-      img.social-icon(src="./images/icons/discord.svg")
-    a(href="https://twitter.com/dinobonoide" target="_blank" rel="noopener noreferrer")
-      img.social-icon(src="./images/icons/twitter.svg")
-    a(href="https://www.twitch.tv/dininho" target="_blank" rel="noopener noreferrer")
-      img.social-icon(src="./images/icons/twitch.svg")
-
-.preload-key
-.easter-egg#easter-egg
-  div Você liberou o mundo secreto!
-.key-mover#key-mover
-  .key
-
-script(src="./js/paralax.js")
-script(src="./js/easter-egg.js")
-script(src="./js/video-player.js")
-script(src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js")
-script.
-  var slider = tns({
-    container: '.screenshots-slider',
-    items: 2,
-    controls: false,
-    nav: false,
-    arrowKeys:true,
-    mouseDrag: true,
-    center: true
-  });
-  
+  include ./_partials/footer.pug
+  include ./_partials/easter-egg.pug

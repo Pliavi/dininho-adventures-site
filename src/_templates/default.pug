@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+html(lang="pt-BR")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Dininho Adventures
+    link(rel="shortcut icon" href="./favicon.png" type="image/x-icon")
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Nunito&display=swap")
+    link(rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/tiny-slider.css")
+    link(rel="stylesheet" href="./css/style.styl")
+  body
+    block content
+    
+    script(src="./js/paralax.js")
+    script(src="./js/easter-egg.js")
+    script(src="./js/video-player.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js")
+    script.
+      var slider = tns({
+        container: '.screenshots-slider',
+        items: 2,
+        controls: false,
+        nav: false,
+        arrowKeys:true,
+        mouseDrag: true,
+        center: true
+      });

@@ -1,0 +1,8 @@
+mixin fluidSection(sectionName, isMainTitle, title)
+  section.section(class!=sectionName)
+    if title
+      if isMainTitle
+        h1.title= title
+      else
+        h2.subtitle= title
+    block
